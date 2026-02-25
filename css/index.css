@@ -1,0 +1,390 @@
+/* ===== BODY / MAIN PAGE STYLES ===== */
+body {
+    width: 80%;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    color: #0d1e34;
+    margin: 20px auto;
+    background-color: #f4f4f4;
+}
+
+/* ===== RESPONSIVE BODY / MAIN PAGE STYLES FOR TABLETS AND MOBILE ===== */
+@media screen and (max-width: 1023px) {
+    body {
+        width: 100%;
+        line-height: 1.2;
+        margin: 0;
+    }
+}
+
+/* ===== HEADER / HEADER AND LOGO SECTION ===== */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #e0e0e0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+/* ===== NAVIGATION / NAVIGATION MENU ===== */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #022b60;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #055c8b;
+    background-color: #d2f7fa;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+/* ===== HAMBURGER MENU CHECKBOX / HIDDEN CHECKBOX FOR BURGER TOGGLE ===== */
+#menu-toggle {
+    display: none;
+}
+
+/* ===== HAMBURGER BUTTON / BURGER ICON ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #022b60;
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+/* ===== RESPONSIVE NAVIGATION / NAVIGATION FOR LARGE SCREENS (max-width: 1200px) ===== */
+@media screen and (max-width: 1200px) {
+    nav ul li {
+        margin: 0 5px;
+    }
+}
+
+/* ===== RESPONSIVE HEADER WITH HAMBURGER / TABLET LAYOUT (max-width: 1023px) ===== */
+@media screen and (max-width: 1023px) {
+    header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px;
+    }
+
+    .logo-left {
+        order: 1;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        order: 2;
+    }
+
+    .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: #022b60;
+        margin: 3px 0;
+        transition: 0.3s;
+        border-radius: 2px;
+    }
+
+    /* Rotate hamburger when checked */
+    #menu-toggle:checked ~ .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    #menu-toggle:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle:checked ~ .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        background-color: #e0e0e0;
+    }
+
+    /* Show nav when checkbox is checked */
+    #menu-toggle:checked ~ nav {
+        max-height: 400px;
+        transition: max-height 0.3s ease-in;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        display: block;
+        padding: 10px;
+    }
+
+    /* Close menu when clicking on a link */
+    nav ul li a:active {
+        --close-menu: #menu-toggle { checked: false; }
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+        margin: 0;
+    }
+}
+
+/* ===== SECTIONS / MAIN CONTENT SECTIONS ===== */
+section {
+    padding: 20px;
+    background: white;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== RESPONSIVE SECTIONS / MAIN CONTENT SECTIONS FOR TABLETS AND MOBILE (max-width: 1023px) ===== */
+@media screen and (max-width: 1023px) {
+    section {
+        margin: 0 0 20px 0;
+        border-radius: 0;
+    }
+}
+
+/* ===== ABOUT SECTION / ABOUT ME TEXT FORMATTING ===== */
+#about > p {
+    text-align: justify;
+}
+
+/* ===== HEADINGS / HEADING STYLES ===== */
+h1 {
+    text-align: center;
+    color: #000;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+h2 {
+    text-align: center;
+    color: #022b60;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+h3 {
+    padding-left: 20px;
+    color: #05418f;
+    font-weight: 600;
+}
+
+/* ===== RESPONSIVE HEADINGS / HEADINGS FOR TABLETS AND MOBILE (max-width: 1023px) ===== */
+@media screen and (max-width: 1023px) { 
+    h1 {
+        transform: none;
+        text-align: center;
+        color: #5d307f;
+        font-size: 22px;
+        font-weight: 800;
+        text-shadow: 2px 2px #be9ef0;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+}
+
+/* ===== LISTS / GENERAL LIST STYLES ===== */
+ul {
+    list-style-type: square;
+}
+
+
+
+/* ===== RESPONSIVE JOB TITLE / JOB TITLE FOR TABLETS AND MOBILE (max-width: 1023px) ===== */
+@media screen and (max-width: 1023px) {
+    .job-title {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .job-title {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-date {
+        margin-top: 8px;
+    }
+}
+
+
+
+
+/* ===== SOCIAL ICONS / SOCIAL MEDIA ICONS ===== */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.fa {
+    padding: 15px 10px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+.fa:hover {
+    opacity: 0.8;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-github {
+    background: #333;
+    color: white;
+}
+
+/* ===== FOOTER / FOOTER SECTION ===== */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: lightgrey;
+    border-radius: 10px;
+}
+
+footer p {
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* ===== BACK TO TOP BUTTON / SCROLL TO TOP BUTTON ===== */
+#backToTop {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    background-color: #05418f;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+#backToTop:hover {
+    background-color: #022b60;
+}
+
+/* ===== RESPONSIVE FOOTER / FOOTER SECTION FOR MOBILE AND TABLET (max-width: 1023px) ===== */
+@media screen and (max-width: 1023px) {
+   footer {
+        border-radius: 0;
+    }
+
+    footer p {
+        padding-left: 0;
+    }
+
+    #backToTop {
+        margin-right: 0;
+        font-size: 12px;
+    }
+}

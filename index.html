@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Olena Salnikova's Open API Project</title>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="HTML, CSS, JavaScript">
+        <meta name="description" content="CTD homework - 12">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Olena Salnikova">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="icon" href="./images/favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body id="top">
+        <header>
+            <input type="checkbox" id="menu-toggle">
+            <a href="./index.html" class="logo-left">
+			    <img src="./images/logo.png" alt="logo" class="logo">
+		    </a>
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#api">Open API Project</a></li>
+                    <li><a href="#connect">Connect</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- About Section -->
+        <section id="about">
+            <h1>Olena Salnikova</h1>
+            <h2>About</h2>
+            <p>Hello! My name is <b>Olena Salnikova</b>.</p>
+            <p>I am a technology enthusiast currently studying programming at <b>Code the Dream</b>. I enjoy learning about new technologies and working on projects that allow me to apply my skills and creativity.</p>
+            <p>This website is a part of my <b>Open API Project</b>, where I combine my curiosity and coding skills to explore real-world data using open source APIs.</p>
+        </section>
+
+        <!-- Open API Section -->
+        <section id="api">
+            <h2>Open API Project</h2>
+            <ul></ul>
+        </section>
+
+        <!-- Connect Section -->
+        <section id="connect">
+            <h2>Connect</h2>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/olena-salnikova-a1887a171" target="_blank" class="fa fa-linkedin"></a>
+                <a href="https://github.com/Olena-Salnikova" target="_blank" class="fa fa-github"></a>
+                <a href="https://www.facebook.com/elena.salnikova.182465/" target="_blank" class="fa fa-facebook"></a>
+            </div>
+        </section>
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    menuToggle.checked = false;
+                });
+            });
+        </script>
+        
+        <script src="js/index.js"></script>
+    </body>
+</html>

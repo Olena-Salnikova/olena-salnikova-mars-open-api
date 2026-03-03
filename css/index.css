@@ -277,7 +277,9 @@ h3 {
 ul {
     list-style-type: square;
 }
-
+#api ul {
+    list-style-type: none;
+}
 
 
 /* ===== RESPONSIVE JOB TITLE / JOB TITLE FOR TABLETS AND MOBILE (max-width: 1023px) ===== */
@@ -303,9 +305,56 @@ ul {
         margin-top: 8px;
     }
 }
+/* ===== Open API ===== */
+#api ul{
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 20px;
+    justify-content: center;
+    margin: 0;
+}
+#api li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 220px;
+    font-size: 16px;
+    line-height: 1.3;
+}
+#api img {
+    height: 60px;
+    width: auto;
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+}
 
+/* ===== RESPONSIVE OPEN API / OPEN API FOR TABLETS AND MOBILE ===== */
+@media screen and (max-width: 1023px) {
+    #api ul {
+        gap: 30px;
+    }
 
+    #api li {
+        max-width: 100%;
+        font-size: 14px;
+    }
 
+    #api img {
+        height: 50px;
+        margin-bottom: 8px;
+    }
+}   
+@media screen and (max-width: 767px) {
+    #api ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+  
+}
 
 /* ===== SOCIAL ICONS / SOCIAL MEDIA ICONS ===== */
 .social-icons {

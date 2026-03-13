@@ -22,7 +22,7 @@
                 <span></span>
                 <span></span>
             </label>
-            <nav>
+            <nav class="main-nav">
                 <ul>
                     <li><a href="#about">About</a></li>
                     <li><a href="#api">Open API Project</a></li>
@@ -43,7 +43,17 @@
         <!-- Open API Section -->
         <section id="api">
             <h2>Open API Project</h2>
-            <ul></ul>
+            <nav class="weather-tabs">
+                <ul>
+                    <li><a href="#" data-tab="temperature" class="active">Temperature</a></li>
+                    <li><a href="#" data-tab="sun">Sunrise/Sunset</a></li>
+                    <li><a href="#" data-tab="wind">Wind</a></li>
+                    <li><a href="#" data-tab="all">All</a></li>
+                </ul>
+            </nav>
+            <div id="weather-results">
+                <!-- Weather data will be dynamically inserted here -->
+            </div>
         </section>
 
         <!-- Connect Section -->
@@ -55,13 +65,31 @@
                 <a href="https://www.facebook.com/elena.salnikova.182465/" target="_blank" class="fa fa-facebook"></a>
             </div>
         </section>
-        <script>
-            const menuToggle = document.getElementById('menu-toggle');
-            const navLinks = document.querySelectorAll('nav ul li a');
 
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    menuToggle.checked = false;
+        <!-- Scripts for smooth scrolling and main menu -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuToggle = document.getElementById('menu-toggle');
+                const navLinks = document.querySelectorAll('.main-nav ul li a');
+
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                        if (href.startsWith('#')) {
+                            e.preventDefault();
+                            menuToggle.checked = false;
+                            setTimeout(() => {
+                                const section = document.querySelector(href);
+                                if (section) {
+                                    const header = document.querySelector('header');
+                                    const headerOffset = header ? header.offsetHeight : 0;
+                                    const elementPosition = section.getBoundingClientRect().top;
+                                    const offsetPosition = elementPosition + window.scrollY - headerOffset;
+                                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                                }
+                            }, 300);
+                        }
+                    });
                 });
             });
         </script>
